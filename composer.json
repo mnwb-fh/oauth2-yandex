@@ -1,5 +1,5 @@
 {
-    "name": "zip-fa/oauth2-yandex",
+    "name": "mnwb/oauth2-yandex",
     "description": "Yandex provider for league/oauth2-client",
     "license": "MIT",
     "authors": [
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Aego\\OAuth2\\Client\\Provider\\": "src/"
+            "mnwb\\OAuth2\\Client\\Provider\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Aego\\OAuth2\\Client\\Test\\Provider\\": "test/"
+            "mnwb\\OAuth2\\Client\\Test\\Provider\\": "test/"
         }
     }
 }
