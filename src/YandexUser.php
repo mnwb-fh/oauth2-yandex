@@ -41,7 +41,7 @@ class YandexUser implements ResourceOwnerInterface
      */
     public function getBirthday(): ?string
     {
-    if ($this->response['bdate'])
+    if ($this->response['birthday'])
         return date("d.m.Y", strtotime ($this->response['bdate']));
     else
         return null;
