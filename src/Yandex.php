@@ -1,6 +1,6 @@
 <?php
 
-namespace Aego\OAuth2\Client\Provider;
+namespace mnwb\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
@@ -64,6 +64,6 @@ class Yandex extends AbstractProvider
      */
     protected function createResourceOwner(array $response, AccessToken $token): ResourceOwnerInterface
     {
-        return new YandexResourceOwner($response);
+        return new YandexUser($response);
     }
 }
