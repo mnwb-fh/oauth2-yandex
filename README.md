@@ -9,13 +9,13 @@ Fork https://github.com/zip-fa/oauth2-yandex with getBirthday function.
 ## Installation
 
 ```sh
-composer require aego/oauth2-yandex
+composer require mnwb/oauth2-yandex
 ```
 
 ## Usage
 
 ```php
-$provider = new Aego\OAuth2\Client\Provider\Yandex([
+$provider = new mnwb\OAuth2\Client\Provider\Yandex([
     'clientId' => 'b80bb7740288fda1f201890375a60c8f',
     'clientSecret' => 'f23ccd066f8236c6f97a2a62d3f9f9f5',
     'redirectUri' => 'https://example.org/oauth-endpoint',
