@@ -4,7 +4,7 @@ namespace Aego\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
-class YandexResourceOwner implements ResourceOwnerInterface
+class YandexUser implements ResourceOwnerInterface
 {
     private array $response;
 
@@ -34,6 +34,17 @@ class YandexResourceOwner implements ResourceOwnerInterface
     public function getNickname(): ?string
     {
         return $this->response['login'] ?: null;
+    }
+
+    /**
+     * @return string|null DD.MM.YYYY
+     */
+    public function getBirthday(): ?string
+    {
+    if ($this->response['bdate'])
+        return date("d.m.Y", strtotime ($this->response['bdate']));
+    else
+        return null;
     }
 
     /**
