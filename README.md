@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/packagist/l/aego/oauth2-yandex.svg)](https://packagist.org/packages/aego/oauth2-yandex)
 
 This package provides [Yandex](https://passport.yandex.ru) integration for [OAuth2 Client](https://github.com/thephpleague/oauth2-client) by the League.
+Fork https://github.com/zip-fa/oauth2-yandex with getBirthday function.
 
 ## Installation
 
