@@ -87,6 +87,17 @@ class YandexUser implements ResourceOwnerInterface
     }
 
     /**
+     * User's avatar link
+     *
+     * @return string|null
+     */
+    public function getAvatar(): ?string
+    {
+        return null;
+    }
+
+
+    /**
      * Gets last name.
      *
      * @return string|null
