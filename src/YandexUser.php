@@ -23,38 +23,7 @@ class YandexUser implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return $this->response['id'] ?: null;
-    }
-
-    /**
-     * Gets user nickname.
-     *
-     * @return string|null
-     */
-    public function getNickname(): ?string
-    {
-        return $this->response['login'] ?: null;
-    }
-
-    /**
-     * @return string|null DD.MM.YYYY
-     */
-    public function getBirthday(): ?string
-    {
-    if ($this->response['birthday'])
-        return date("d.m.Y", strtotime ($this->response['birthday']));
-    else
-        return null;
-    }
-
-    /**
-     * Gets user email.
-     *
-     * @return string|null
-     */
-    public function getEmail(): ?string
-    {
-        return $this->response['default_email'] ?: null;
+        return $this->getResponseValue('id');
     }
 
     /**
@@ -64,7 +33,47 @@ class YandexUser implements ResourceOwnerInterface
      */
     public function getName(): ?string
     {
-        return $this->response['display_name'] ?: null;
+        return $this->getResponseValue('display_name');
+    }
+
+    /**
+     * Gets user nickname.
+     *
+     * @return string|null
+     */
+    public function getNickname(): ?string
+    {
+        return $this->getResponseValue('login');
+    }
+
+    /**
+     * @return string|null DD.MM.YYYY
+     */
+    public function getBirthday(): ?string
+    {
+    if ($this->getResponseValue('birthday'))
+        return date("d.m.Y", strtotime ($this->getResponseValue('birthday')));
+    return null;
+    }
+
+    /**
+     * Gets user email.
+     *
+     * @return string|null
+     */
+    public function getEmail(): ?string
+    {
+        return $this->getResponseValue('default_email');
+    }
+
+    /**
+     * Get locale.
+     *
+     * @return string|null
+     */
+    public function getLocale(): ?string
+    {
+        return null;
     }
 
     /**
@@ -74,7 +83,7 @@ class YandexUser implements ResourceOwnerInterface
      */
     public function getFirstName(): ?string
     {
-        return $this->response['first_name'] ?: null;
+        return $this->getResponseValue('first_name');
     }
 
     /**
@@ -84,7 +93,7 @@ class YandexUser implements ResourceOwnerInterface
      */
     public function getLastName(): ?string
     {
-        return $this->response['last_name'] ?: null;
+        return $this->getResponseValue('last_name');
     }
 
     /**
@@ -94,7 +103,7 @@ class YandexUser implements ResourceOwnerInterface
      */
     public function getGender(): ?string
     {
-        return $this->response['sex'] ?: null;
+        return $this->getResponseValue('sex');
     }
 
     /**
@@ -103,5 +112,15 @@ class YandexUser implements ResourceOwnerInterface
     public function toArray(): array
     {
         return $this->response;
+    }
+
+    /**
+     * @param $key
+     *
+     * @return mixed|null
+     */
+    private function getResponseValue($key)
+    {
+        return $this->response[$key] ?? null;
     }
 }
